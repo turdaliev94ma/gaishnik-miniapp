@@ -1,3 +1,19 @@
+app.get("/", (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="ru">
+      <head>
+        <meta charset="UTF-8" />
+        <title>Карманный ГАИшник</title>
+      </head>
+      <body style="font-family: sans-serif; padding: 40px;">
+        <h1>🚗 Карманный ГАИшник</h1>
+        <p>Мини-приложение Telegram</p>
+      </body>
+    </html>
+  `);
+});
+
 require("dotenv").config();
 
 const express = require("express");
@@ -81,4 +97,5 @@ app.listen(PORT, () => {
   console.log(`✅ Backend запущен на http://localhost:${PORT}`);
   console.log(`✅ Проверка: открой http://localhost:${PORT}/health`);
 });
+
 
