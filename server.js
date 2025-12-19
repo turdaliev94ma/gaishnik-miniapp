@@ -10,6 +10,10 @@ app.use(express.json({ limit: "1mb" }));
 const PORT = process.env.PORT || 3000;
 
 // ====== ПРОСТАЯ ПРОВЕРКА: сервер жив ======
+app.get("/", (req, res) => {
+  res.status(200).send("✅ API is working");
+});
+
 app.get("/health", (req, res) => {
   res.json({ ok: true, service: "gaishnik-backend", time: new Date().toISOString() });
 });
@@ -77,3 +81,4 @@ app.listen(PORT, () => {
   console.log(`✅ Backend запущен на http://localhost:${PORT}`);
   console.log(`✅ Проверка: открой http://localhost:${PORT}/health`);
 });
+
